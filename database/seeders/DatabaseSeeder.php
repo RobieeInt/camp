@@ -14,5 +14,16 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
+
+        // Manggil Seedernya biar masuk DB
+        $this->call([
+            CampTableSeeder::class
+        ]);
+        $this->call([
+            CampBenefitTableSeeder::class
+        ]);
+        $this->call([
+            AdminTableSeeder::class
+        ]);
     }
 }
