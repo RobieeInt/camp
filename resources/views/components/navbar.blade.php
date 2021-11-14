@@ -31,7 +31,7 @@
                         style="border-radius: 50px; width: 50px; height: 50px;">
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="right: 20; left: 20;">
                         <li>
-                            <a href="" class="dropdown-item">Dashboard</a>
+                            <a href="{{ route('dashboard') }}" class="dropdown-item">Dashboard</a>
                         </li>
                         <li>
                             <a href="" class="dropdown-item"
