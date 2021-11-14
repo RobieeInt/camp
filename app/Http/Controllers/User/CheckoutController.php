@@ -9,6 +9,8 @@ use App\Models\Camp;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\User\Checkout\Store;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\Checkout\AfterCheckout;
 
 // use Illuminate\Support\Facades\Auth;
 
@@ -34,7 +36,7 @@ class CheckoutController extends Controller
         // return $camp;
         if ($camp->isRegistered){
             $request->session()->flash('error', "Anda Sudah Terdaftar di '{$camp->title}' Camp");
-            return redirect(route('dashboard'));
+            return redirect(route('user.dashboard'));
         }
         return view('checkout.create', [
             'camp' => $camp
@@ -49,7 +51,7 @@ class CheckoutController extends Controller
      */
     public function store(Store $request, Camp $camp)
     {
-        return $request->all();
+        // return $request->all();
         //mapping request data
         $data = $request->all();
         $data['user_id'] = Auth::id();
@@ -64,6 +66,9 @@ class CheckoutController extends Controller
 
         //create checkout
         $checkout = Checkout::create($data);
+
+        // kirim email
+        Mail::to(Auth::user()->email)->send(new AfterCheckout($checkout)); //kirim email ke user yang lg lodin, kirim jg email aftercheckout
 
         return redirect(route('checkout.success'));
     }
@@ -116,4 +121,6 @@ class CheckoutController extends Controller
     public function success () {
         return view('checkout.success');
     }
+
+
 }
