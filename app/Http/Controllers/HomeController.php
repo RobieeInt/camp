@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CampBenefit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Checkout;
@@ -26,4 +27,6 @@ class HomeController extends Controller
                 break;
         }
     }
+
+
 }

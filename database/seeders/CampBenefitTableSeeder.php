@@ -93,24 +93,6 @@ class CampBenefitTableSeeder extends Seeder
                 'created_at' => date('Y-m-d H:i:s', time()),
                 'updated_at' => date('Y-m-d H:i:s', time()),
             ],
-            [
-                'camp_id' => '2',
-                'name' => 'Future Job Opportinity',
-                'created_at' => date('Y-m-d H:i:s', time()),
-                'updated_at' => date('Y-m-d H:i:s', time()),
-            ],
-            [
-                'camp_id' => '2',
-                'name' => 'Premium Design Kit',
-                'created_at' => date('Y-m-d H:i:s', time()),
-                'updated_at' => date('Y-m-d H:i:s', time()),
-            ],
-            [
-                'camp_id' => '2',
-                'name' => 'Website Builder',
-                'created_at' => date('Y-m-d H:i:s', time()),
-                'updated_at' => date('Y-m-d H:i:s', time()),
-            ],
         ];
 
         CampBenefit::insert($campbenefit);
