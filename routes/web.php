@@ -20,9 +20,11 @@ use App\Http\Controllers\ProgramController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+Route::get('/', [HomeController::class, 'dashboarddata'])->name('welcome');
+
+// Route::get('/', function () {
+//     return view('welcome');
+// })->name('welcome');
 
 Route::get('login', function () {
     return view('login');

@@ -16,16 +16,16 @@ class CampTableSeeder extends Seeder
     {
         $camps = [
             [
-                'title' => 'Gas Teruss',
+                'title' => 'Menjadi Aku Versi Pro',
                 'slug' => 'gas-teruss',
                 'price' => '300000',
                 'created_at' => date('Y-m-d H:i:s', time()),
                 'updated_at' => date('Y-m-d H:i:s', time()),
             ],
             [
-                'title' => 'Buat Entar',
+                'title' => 'Menjadi Aku',
                 'slug' => 'buat-entar',
-                'price' => '600000',
+                'price' => '290000',
                 'created_at' => date('Y-m-d H:i:s', time()),
                 'updated_at' => date('Y-m-d H:i:s', time()),
             ],
